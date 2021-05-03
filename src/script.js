@@ -23,13 +23,19 @@
     // where it breaks out of the loop and only logs when it lines up with 0 (option1) instead of checking against both.
 
     function chooseOption(opt1,opt2) {
-        randNum = Math.floor(Math.random() * 2);
+        let randNum = Math.floor(Math.random() * 2);
         if (randNum === 0) {
-            opt1;
+            return opt1;
         } else {
             return opt2;
         }
     }
+
+    /**
+     * ternary notes
+     *  return condition ? option1 : option2;
+     *  paranthesis are not considerd outside of a function
+     */
     // test log
     // console.log(chooseOption());
 
@@ -71,7 +77,8 @@
     // while neither player is at or below 0, continue to run the loop
         while(player1Health > 0 && player2Health > 0){
 
-            let attacker = chooseOption(player2, player1);
+            // const attacker = chooseOption(player1, player2);
+            let attacker = chooseOption(player1, player2);
 
         // while the attacker is player 1, attack player 2, then log player2's health.
             if (attacker === player1) {
